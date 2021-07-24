@@ -22,15 +22,14 @@ def Speak(string):
     speak.Speak(string)
 
 
-News_url = requests.get(
-    "https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=95a2058faa4e49ddb1391a8fcc2de3eb",
-    params={"status": "ok", "id": "the-times-of-india",
-            "name": "The Times of India"}
-)
-var1 = dict[News_url]
-json_news_file = News_url.json()
 if __name__ == '__main__':
-    # Speak("You are my first assistant")
-    print(News_url.text)
-    print(json_news_file)
-    Speak(json_news_file)
+    Speak("News for today....Lets Begin")
+    News_url = requests.get("https://newsapi.org/v2/top-headlines?country=in&category=technology&apiKey=95a2058faa4e49ddb1391a8fcc2de3eb").text
+    News_dict = json.loads(News_url)
+    print(News_dict["articles"])
+    arts = News_dict['articles']
+    for article in arts:
+        Speak(article['title'])
+        Speak("Moving on to the next news ... ")
+
+    Speak("Thanks for Listening.")
