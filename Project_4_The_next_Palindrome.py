@@ -1,14 +1,14 @@
-# print("Enter the number of items you want to enter , (Enter one by one) : \n")
-# size = int(input("Enter the size : \n"))
-#
-# # Creating an empty list in which we will append the values of which we want to know the Palindrome.
-# my_list = []
-# for i in range(size):
-#     my_list.append(input("Enter the element one by one : "))  # This will take the input of the items/elements
-#
-# print(f"Your Elements are {my_list}")  # This will print the list
+print("Enter the number of items you want to enter , (Enter one by one) : \n")
+size = int(input("Enter the size : \n"))
 
-my_list = ["45", "24", "15", "42"]    # This is the sample list
+# Creating an empty list in which we will append the values of which we want to know the Palindrome.
+my_list = []
+for i in range(size):
+    my_list.append(input("Enter the element one by one : "))  # This will take the input of the items/elements
+
+print(f"Your Elements are {my_list}")  # This will print the list
+
+# my_list = ["45", "24", "15", "42"]    # This is the sample list
 
 for item in my_list:
     if item == str(item)[::-1]:   # If the item is equal to the Palindrome of the item then it will print the same output
