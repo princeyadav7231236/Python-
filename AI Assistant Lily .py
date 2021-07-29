@@ -50,11 +50,17 @@ def takeCommand():
 
 def sendEmail(to, content):
     """This will send the Email to the input user """
+    # You have to first give permission to google from your google account by simply 
+    # Step-1 -----> sign in to your google account of which you want to send the email.
+    # Step-2 -----> Go to settings 
+    # Step-3 -----> Enable Less secure apps
+    # If you will not give the permission then google will not allow to send the email by this program.
+    
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login("princeyadav7231236@gmail.com", "prince7231236")
-    server.sendmail("princeyadav7231236@gmail.com", to, content)
+    server.login("your_email_here @gmail.com", "your_password_here")
+    server.sendmail("your_email_here @gmail.com", to, content)
 
 if __name__ == '__main__':
     speak("Hello boss how are you ")
@@ -96,7 +102,7 @@ if __name__ == '__main__':
             try:
                 speak("What should i say")
                 content = takeCommand()
-                to = "princeyadav7231236@gmail.com"
+                to = "email_of_the_person_to_whom_you_want_to_send_the_email  @gmail.com"
                 sendEmail(to, content)
                 speak("Email has been send !")
             except Exception as e:
