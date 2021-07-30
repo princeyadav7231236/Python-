@@ -61,8 +61,8 @@ def sendEmail(to, content):
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.ehlo()
     server.starttls()
-    server.login("princeyadav7231236@gmail.com", "prince7231236")
-    server.sendmail("princeyadav7231236@gmail.com", to, content)
+    server.login("your_Email_here", "your_Gmail_password,here")
+    server.sendmail("your_email_here", to, content)
 
 
 if __name__ == '__main__':
@@ -122,7 +122,7 @@ if __name__ == '__main__':
             try:
                 speak("What should i say")
                 message = takeCommand()
-                to_whom_you_want_to_send_the_email = "princeyadav7231236@gmail.com"
+                to_whom_you_want_to_send_the_email = "Reciver's_Email_address"
                 sendEmail(to_whom_you_want_to_send_the_email, message)
                 speak("Email has been send !")
             except Exception as e:
@@ -215,10 +215,10 @@ if __name__ == '__main__':
                 speak("you said something else, so I am not running your command shutdown ")
                 exit()
 
-        elif "who made you " in query or "who created you " in query or "who invented you " in query:
+        elif "who made you" in query or "who created you" in query or "who invented you" in query:
             speak(
                 "I am Lily and I was invented by BOSS Diwakar, and I am here to help him to improve his Programming skills. ")
-        elif "what can you do " in query or "what are the tasks which you can perform " in query:
+        elif "what can you do" in query or "what are the tasks which you can perform " in query:
             speak(
                 "I am designed to do some mini tasks like opening Google, YouTube, GitHub, StackOverFlow, and I programmed in such a way that I can "
                 "help you in Computational and Geographical problems, and I can also tell the time and Weather of different cities, and I can Provide you with the "
